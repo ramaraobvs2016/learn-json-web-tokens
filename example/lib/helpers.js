@@ -17,6 +17,7 @@ function loadView(view) {
 var index      = loadView('index');      // default page
 var restricted = loadView('restricted'); // only show if JWT valid
 var fail       = loadView('fail');       // auth fail
+var Upload       = loadView('Upload'); 
 
 // show fail page (login)
 function authFail(res, callback) {
@@ -154,6 +155,11 @@ function notFound(res) {
 function home(res) {
   res.writeHead(200, {'content-type': 'text/html'});
   return res.end(index);
+}
+
+function Upload(res) {
+  res.writeHead(200, {'content-type': 'text/html'});
+  return res.end(Upload);
 }
 
 function done(res) {
